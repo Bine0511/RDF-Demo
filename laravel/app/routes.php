@@ -11,7 +11,45 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/index', function()
+{
+	return View::make('index');
+});*/
+
+Route::any("/", [
+	"as" => "index",
+	"uses" => "HomeController@showWelcome"
+])->before('auth');
+
+Route::any("/load", [
+	"as" => "load",
+	"uses" => "HomeController@showLoad"
+])->before('auth');
+
+Route::get("/login", [
+	"as" => "user/login",
+	"uses" => "UserController@getLogin"
+])->before('guest');
+
+Route::post("/login", [
+	"uses" => "UserController@postLogin"
+]);
+
+Route::get("/register", [
+	"as" => "user/register",
+	"uses" => "UserController@getRegister"
+]);
+
+Route::post("/register", [
+	"uses" => "UserController@postRegister"
+]);
+
+Route::any("/logout", [
+	"as" => "user/logout",
+	"uses" => "UserController@logout"
+])->before('auth');
