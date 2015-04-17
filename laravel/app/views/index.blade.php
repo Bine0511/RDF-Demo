@@ -27,31 +27,19 @@ PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX category: <http://dbpedia.org/resource/Category:>
 
-SELECT DISTINCT *
-WHERE  {{?x dcterms:subject category:Middle-earth_realms}
- UNION {?x dcterms:subject category:Middle-earth_castles_and_fortresses}
- UNION {?x dcterms:subject category:Middle-earth_races}
- UNION {?x dcterms:subject category:Middle-earth_Orcs}
- UNION {?x dcterms:subject category:The_Lord_of_the_Rings_characters}
- UNION {?x dcterms:subject category:Middle-earth_rulers}
- UNION {?x dcterms:subject category:High_Elves}
- UNION {?x dcterms:subject category:Middle-earth_Dwarves}
- UNION {?x dcterms:subject category:Middle-earth_Men}
- UNION {?x dcterms:subject category:Middle-earth_Dragons}
- UNION {?x dcterms:subject category:Middle-earth_animals}
- UNION {?x dcterms:subject category:Middle-earth_Maiar}
- UNION {?x dcterms:subject category:Middle-earth_Valar}
-}
+SELECT DISTINCT ?label ?desc ?x
+WHERE  { ?x rdfs:label ?label . filter(langMatches(lang(?label),"en")) . ?x dbpedia-owl:abstract ?desc . filter(langMatches(lang(?desc),"en"))}
 ';
+
 
 $r = '';
 if ($rows = $store->query($query, 'rows')) {
   foreach ($rows as $row) {
-    $r .= '<li>' . $row['x'] . '</li>';
+    $r .= '<div class="row listpage"><div class="large-3 columns">&nbsp;</div><div class="large-6 columns"><p>' . substr($row['x'], 28) . '</p></div><div class="large-3 columns">&nbsp;</div></div>';
   }
 }
 
-echo $r ? '<ul>' . $r . '</ul>' : 'store empty';
+echo $r ? '<div><div class="row"><div class="large-12 columns"><h1 class="name">List of all ... everything ... yeah</h1></div></div>' . $r . '</div>' : 'Store Empty, go to /load';
 
 ?>
 @stop

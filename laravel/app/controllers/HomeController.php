@@ -19,7 +19,16 @@ class HomeController extends BaseController {
 		return View::make('index');
 	}
 
+	public function sparql(){
+		return View::make('sparql');
+	}
+
 	public function showLoad(){
 		return View::make('load');
 	}
+
+	public function showPage($id){
+		return View::make('page', array('page' => $id));
+	}
+
 }

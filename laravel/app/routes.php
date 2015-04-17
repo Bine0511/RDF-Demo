@@ -11,15 +11,6 @@
 |
 */
 
-/*Route::get('/', function()
-{
-	return View::make('hello');
-});
-
-Route::get('/index', function()
-{
-	return View::make('index');
-});*/
 
 Route::any("/", [
 	"as" => "index",
@@ -52,4 +43,14 @@ Route::post("/register", [
 Route::any("/logout", [
 	"as" => "user/logout",
 	"uses" => "UserController@logout"
+])->before('auth');
+
+Route::get('page/{id}', [
+	"uses" => "HomeController@showPage"
+]);
+
+
+Route::any("/sparql", [
+	"as" => "sparql",
+	"uses" => "HomeController@sparql"
 ])->before('auth');

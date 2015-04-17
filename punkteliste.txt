@@ -1,0 +1,10 @@
+Webservice ... 200
+Daten lokal gespeichert ... 100
+Menschen- & Maschinenlesbares Format ... 50
+Umgang mit den Daten mit Framework (ARC2) ... 50
+Login ... 50
+Routing mit MVC Framework ... 50
+secure Login ... 50
+schön ausgestaltet ... 50
+Responsive ... 100
+sparql-endpoint ... theoretisch ja, praktisch unsichtbar(public/sparql) ... 50

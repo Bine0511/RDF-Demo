@@ -1,0 +1,4 @@
+https://code.google.com/p/semanticfacetedsearch/wiki/Introduction
+https://www.google.at/#q=rdf%20faceted%20search
+http://wiki.solarium-project.org/index.php/V3:Basic_usage
+http://www.solarium-project.org/

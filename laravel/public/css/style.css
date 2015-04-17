@@ -1,0 +1,64 @@
+
+h1.page{
+	font-size:2em;
+	font-weight: bold;
+	letter-spacing:10px;
+	//background-color: gray;
+	margin: 0px;
+	padding: 20px;
+}
+img.page{
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+p.page{
+	padding: 20px;
+	background-color: #aaa;
+	color:#223344;
+}
+.row{
+	background-color: #ddd;
+}
+
+input[type="submit"]{
+	font-size: 0.8125rem;
+	padding: 0.875rem 1.75rem 0.9375rem;
+	box-sizing: border-box;
+	display: inline-block;
+	background-color: #008cba;
+	border-color: #007095;
+	border-radius: 0;
+	border-style: solid;
+	border-width: 0;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+	font-weight: normal;
+	line-height: normal;
+	margin: 0 0 1.25rem;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 300ms ease-out 0s;
+	text-rendering: optimizelegibility;
+	font-style: normal;
+}
+
+input[type="submit"]:hover{
+	background-color: #cf2a0e;
+}
+
+div.listpage:nth-child(odd) div.large-6{
+	background-color: #def;
+	color: #123;
+	text-align: center;
+	border: 1px solid black;
+	padding-top: 20px;
+}
+div.listpage:nth-child(even) div.large-6{
+	background-color: #123;
+	color: #def;
+	text-align: center;
+	border: 1px solid white;
+	padding-top: 20px;
+}
